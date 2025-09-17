@@ -1,0 +1,686 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <!-- start: META -->
+    <meta charset="utf-8" />
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="Sistema de Seguimiento y Control de Expedientes">
+    <meta name="author" content="Corte Suprema de Justicia">
+    <!-- end: META -->
+    <title>Gestión de expedientes</title>
+
+    <!-- start: CSS -->
+    <link href="/gestionelectronicajudicial/Content/bootstrap.css" rel="stylesheet"/>
+<link href="/gestionelectronicajudicial/Content/font-awesome-4.3.0/css/font-awesome.css" rel="stylesheet"/>
+<link href="/gestionelectronicajudicial/Content/assets/fonts/style.css" rel="stylesheet"/>
+<link href="/gestionelectronicajudicial/Content/assets/css/open-sans.css" rel="stylesheet"/>
+<link href="/gestionelectronicajudicial/Content/assets/css/raleway.css" rel="stylesheet"/>
+<link href="/gestionelectronicajudicial/Content/assets/css/main.css" rel="stylesheet"/>
+<link href="/gestionelectronicajudicial/Content/assets/css/main-responsive.css" rel="stylesheet"/>
+<link href="/gestionelectronicajudicial/Content/assets/plugins/perfect-scrollbar/src/perfect-scrollbar.css" rel="stylesheet"/>
+<link href="/gestionelectronicajudicial/Content/assets/css/theme_light.css" rel="stylesheet"/>
+<link href="/gestionelectronicajudicial/Content/loading.css" rel="stylesheet"/>
+
+
+    
+    <link rel="stylesheet" href="/gestionelectronicajudicial/Content/assets/plugins/bootstrap-modal/css/bootstrap-modal.css" />
+    <link rel="stylesheet" href="/gestionelectronicajudicial/Content/assets/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css" />
+<link href="/gestionelectronicajudicial/BotDetectCaptcha.ashx?get=layout-stylesheet&amp;amp;t=1758085200"
+      rel="stylesheet" type="text/css" />
+    
+
+    <!-- end: CSS -->
+    
+</head>
+<body class="login example2">
+    <div id="loading" class=""></div>
+    <div class="main-login col-sm-4 col-sm-offset-4">
+        <div class="logo">
+            <img class="img-rounded" style="width: 82px; margin-right: 10px" alt="Logo" src="/gestionelectronicajudicial/Content/images/logo_.png" title="Corte Suprema de Justicia" />
+            
+            <div>
+                <i class="clip-stack-2"></i>
+                &nbsp;GESTION DE EXPEDIENTES
+            </div>
+        </div>
+       
+        
+
+
+<div class="box-login">
+
+    <div class="errorHandler alert alert-danger no-display">
+        <i class="fa fa-remove-sign"></i>Por favor complete las informaciones requeridas.
+    </div>
+    <div class="alert alert-danger" id="divMensajeAutenticacion" style="display:none;">
+        <i class="fa fa-remove-sign"></i>
+        <span id="dmensajeError">Los datos suministrados son incorrectos</span>
+    </div>
+    <div class="alert alert-danger no-display" id="mensajeError"> </div>
+
+    <div id="divLogin">
+        <h3>Autenticación de Usuarios</h3>
+        <p>
+            Por favor, introduzca su número de documento y contraseña para acceder.
+        </p>
+
+    
+        <form id="frmLogin" class="form-login" action="/gestionelectronicajudicial/Login/Ingresar" method="post">
+
+                      
+            
+            
+            
+            
+            <fieldset>
+                <legend class="hide"></legend>
+                <div class="form-group">
+                    <span class="input-icon">
+                        
+                        <input class="form-control" data-val="true" data-val-required="El usuario es obligatorio" id="Usuario" name="Usuario" placeholder="Usuario" type="text" value="" />
+                        <i class="fa fa-user"></i>
+                    </span>
+                    <font color='RED'>
+                        <span class="field-validation-valid" data-valmsg-for="Usuario" data-valmsg-replace="true"></span>
+                    </font>
+                </div>
+                <div class="form-group form-actions">
+                    <span class="input-icon">
+                        
+                        <input class="form-control password" data-val="true" data-val-required="El password es obligatorio" id="Password" name="Password" placeholder="Contraseña" type="password" />
+                        <i class="fa fa-lock"></i>
+                    </span>
+                    <font color='RED'>
+                        <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                    </font>
+                </div>
+                
+                
+              
+                    
+                
+
+                <div class="form-group form-actions">
+
+                    
+
+
+  <div class="BDC_CaptchaDiv " id="Login_CaptchaDiv" style="width: 280px !important; height: 50px !important; "><!--
+ --><div class="BDC_CaptchaImageDiv" id="Login_CaptchaImageDiv" style="width: 250px !important; height: 50px !important;"><!--
+   --><div class="BDC_CaptchaImageDiv" style="width:250px; height:40px;"><img class="BDC_CaptchaImage" id="Login_CaptchaImage" src="/gestionelectronicajudicial/BotDetectCaptcha.ashx?get=image&amp;c=Login&amp;t=05dff6224d354ef9b2fe4862c9ad24dd" alt="Retype the CAPTCHA code from the image" style="" /></div><!--
+   --><a href="//captcha.org/captcha.html?asp.net" title="BotDetect CAPTCHA ASP.NET Form Validation" style="display: block !important; height: 10px !important; margin: 0 !important; padding: 0 !important; font-size: 9px !important; line-height: 10px !important; visibility: visible !important; font-family: Verdana, DejaVu Sans, Bitstream Vera Sans, Verdana Ref, sans-serif !important; vertical-align: middle !important; text-align: center !important; text-decoration: none !important; background-color: #f8f8f8 !important; color: #606060 !important;">BotDetect CAPTCHA ASP.NET Form Validation</a><!--
+ --></div><!--
+ --><div class="BDC_CaptchaIconsDiv" id="Login_CaptchaIconsDiv" style="width: 24px !important;"><!--
+   --><a class="BDC_ReloadLink" id="Login_ReloadLink" href="#" title="Change the CAPTCHA code"><img class="BDC_ReloadIcon" id="Login_ReloadIcon" src="/gestionelectronicajudicial/BotDetectCaptcha.ashx?get=reload-icon" alt="Change the CAPTCHA code" /></a><!--
+ --></div>
+    <script src="/gestionelectronicajudicial/BotDetectCaptcha.ashx?get=script-include&amp;c=Login&amp;t=05dff6224d354ef9b2fe4862c9ad24dd" type="text/javascript"></script>
+    <input type="hidden" name="BDC_VCID_Login" id="BDC_VCID_Login" value="05dff6224d354ef9b2fe4862c9ad24dd" />
+    <input type="hidden" name="BDC_BackWorkaround_Login" id="BDC_BackWorkaround_Login" value="0" />
+    <input type="hidden" name="BDC_Hs_Login" id="BDC_Hs_Login" value="62abfe0795e1a06748f07651e63581e5cb3a1416" />
+    <input type="hidden" name="BDC_SP_Login" id="BDC_SP_Login" value="1382530234" />
+  </div>
+
+
+                </div>
+                <div class="form-group form-actions">
+                    <span class="input-icon">
+                        <input class="form-control" data-val="true" data-val-required="El codigo del Captcha es obligatorio" id="CaptchaCode" name="CaptchaCode" placeholder="Codigo del Captcha" type="text" value="" />
+                        <input Style="display:none;" Value="Login" id="CaptchaID" name="CaptchaID" type="text" value="" />
+                        <input Style="display:none;" Value="05dff6224d354ef9b2fe4862c9ad24dd" id="CurrentInstanceID" name="CurrentInstanceID" type="text" value="" />
+                        <i class="fa fa-lock"></i>
+                    </span>
+                    <font color='RED'>
+                        <span class="field-validation-valid" data-valmsg-for="CaptchaCode" data-valmsg-replace="true"></span>
+                    </font>
+
+                </div>
+
+                <div class="alert alert-danger">
+                    <p>En atención a la aplicación de nuevas políticas de seguridad, se solicitará a cada usuario realizar el <strong>cambio de su contraseña a partir de la fecha 08/09/2023</strong>, teniendo presente los siguientes requisitos:</p>
+                    <p><strong>- Longitud mínima de 8 caracteres.</strong></p>
+                    <p><strong>- Uso de mayúsculas, minúsculas y dígitos.</strong></p>
+                    <p><strong>- No es posible utilizar contraseñas anteriores.</strong></p>
+                    <p>En caso de requerir el reseteo de la contraseña, favor solicitar al correo: <strong>asistencia@pj.gov.py</strong></p>
+                </div>                                                                    
+                <div class="form-actions">
+                    <input type="submit" class="btn btn-primary pull-right" value="Acceder" id="Acceder" />                    
+                </div>
+            </fieldset>
+        </form>        
+    
+
+        <script src="/gestionelectronicajudicial/Scripts/jquery-2.1.3.js"></script>
+    </div>
+    <div id="divCircunscripcionRol" class="hidden">
+        <h3>Circunscripciones y roles</h3>
+
+        <p>
+            Por favor, seleccione una circunscripción y luego el rol para ingresar al sistema.
+        </p>
+        <div class="panel panel-default">
+
+            <div class="panel-body">
+
+                <div class="col-md-6">
+
+                    <div class="panel-heading">
+                        <i class="clip-location"></i>
+                        Circunscripción
+                    </div>
+                    <div class="panel-body fa-border" id="panelBodyCircunscripcion">
+
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="panel-heading" id="panelRol">
+                        <i class="clip-cogs"></i>
+                        Rol
+                    </div>
+                    <div class="panel-body" id="panelBodyRol">
+                        <i class="fa fa-exclamation-triangle"></i> Seleccione primeramente una circunscripción.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <a class="btn btn-warning pull-right" href="/gestionelectronicajudicial/login/salir">
+            &nbsp;Cancelar
+        </a>
+
+    </div>
+
+    <div id="divRol" class="hidden">
+        <h3>Roles</h3>
+
+        <p>
+            Por favor, seleccione un rol para ingresar al sistema.
+        </p>
+
+        <div class="panel panel-default">
+
+            <div class="panel-body">
+
+                <div class="col-md-12">
+
+                    <div class="panel-heading" id="panelRoles">
+                        <i class="clip-cogs"></i>
+                        Roles
+                    </div>
+
+                    <div class="panel-body" id="panelBodyRoles">
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <a class="btn btn-warning pull-right" href="/gestionelectronicajudicial/login/salir">
+            &nbsp;Cancelar
+        </a>
+
+    </div>
+
+    <div id="divDespacho" class="hidden">
+        <h3>Despachos Judiciales</h3>
+
+        <p>
+            Por favor, seleccione un despacho para ingresar al sistema.
+        </p>
+
+        <div class="panel panel-default">
+
+            <div class="panel-body">
+
+                <div class="col-md-12">
+
+                    <div class="panel-heading" id="panelDespachos">
+                        <i class="clip-cogs"></i>
+                        Despachos Judiciales
+                    </div>
+
+                    <div class="panel-body" id="panelBodyDespachos">
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <a class="btn btn-warning pull-right" href="/gestionelectronicajudicial/login/salir">
+            &nbsp;Cancelar
+        </a>
+
+    </div>
+
+
+</div>
+
+<div id="mDespachosJudiciales" class="modal fade" tabindex="-1">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4>Despachos Judiciales</h4>
+    </div>
+    <div class="modal-body">
+
+    </div>
+    <div class="modal-footer">
+    </div>
+</div>
+
+<div id="mRoles" class="modal fade" tabindex="-1">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4>Roles</h4>
+    </div>
+    <div class="modal-body">
+
+    </div>
+    <div class="modal-footer">
+    </div>
+</div>
+
+<div id="mCircunscripciones" class="modal fade" tabindex="-1">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4>Seleccione una circunscripción</h4>
+    </div>
+    <div class="modal-body">
+
+    </div>
+    <div class="modal-footer">
+    </div>
+</div>
+
+
+        
+       
+        <div class="copyright">
+            2016 © Corte Suprema de Justicia. Dirección de Tecnología de la Información.
+        </div>
+    </div>
+
+    <!-- start: JS -->
+    <script src="/gestionelectronicajudicial/Scripts/jquery-2.1.3.js"></script>
+<script src="/gestionelectronicajudicial/Scripts/jquery.validate.js"></script>
+<script src="/gestionelectronicajudicial/Scripts/jquery.validate.unobtrusive.js"></script>
+<script src="/gestionelectronicajudicial/Scripts/bootstrap.js"></script>
+<script src="/gestionelectronicajudicial/Content/assets/plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+
+    <script>
+       
+        $body = $("#loading");
+
+        //$(document).on({
+        //    ajaxStart: function () { $body.addClass("loading"); },
+        //    ajaxStop: function () { $body.removeClass("loading"); }
+        //});
+
+    </script>
+    
+    <script src="/gestionelectronicajudicial/Content/assets/plugins/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
+    <script src="/gestionelectronicajudicial/Content/assets/plugins/bootstrap-modal/js/bootstrap-modal.js"></script>
+    <script src="/gestionelectronicajudicial/Scripts/jquery.form.min.js"></script>
+    
+    
+    <script src="/gestionelectronicajudicial/Scripts/portal2.js"></script>
+    <script type="text/javascript">
+    //Define el elemento que se va a mostrar cuando bloquea la página
+    $.fn.modal.defaults.spinner = $.fn.modalmanager.defaults.spinner =
+   '<div class="loading-spinner" style="width: 200px; margin-left: -100px;">' +
+       '<div class="progress progress-striped active">' +
+           '<div class="progress-bar" style="width: 100%;"></div>' +
+       '</div>' +
+   '</div>';
+
+    $(document).ready(function () {
+
+        $('#frmLogin').ajaxForm({
+            beforeSubmit: validacion,
+            error: manejarError,
+            success: respuestaExitosa
+        });
+
+        $("a[title ~= 'BotDetect']").removeAttr("style");
+        $("a[title ~= 'BotDetect']").removeAttr("href");
+        $("a[title ~= 'BotDetect']").css('visibility', 'hidden');
+
+
+
+    });
+
+
+    function validacion() {
+        debugger;
+        $("#mensajeError").html("");
+        $("#mensajeError").removeClass("display").addClass("no-display");
+        //Valida los campos del formulario
+        var isValid = $("#frmLogin").valid();
+
+        if (!isValid) {
+            $("#mensajeError").html("Por favor complete las informaciones requeridas.");
+            $("#mensajeError").removeClass("no-display").addClass("display");
+        }
+        //$("#Login_ReloadIcon").trigger('click')
+        //$("#Login_ReloadLink ").trigger('click')
+        //$("#Login_SoundIcon").trigger('click')
+
+        //Solo si isValid == true continua la llamada ajax a la accion del controlador
+        return isValid;
+    }
+
+    function manejarError() {
+        console.log("Problemas al acceder a la función para validar el usuario");
+        $("#mensajeError").html("Problemas al acceder a la función para validar el usuario");
+        $("#mensajeError").removeClass("no-display").addClass("display");
+
+    }
+
+    //var src = "~/BotDetectCaptcha.ashx?get=reload-icon";
+    //function sub() {
+    //    descriptor = document.getElementById("desc").value;
+    //    var urlSC = src + descriptor;
+    //    var js = document.createElement('script');
+    //    js.src = urlSC;
+    //    document.body.appendChild(js);
+    //};
+
+    function respuestaExitosa(respuesta) {
+        debugger;
+        $("#mensajeError").html("");
+        $("#mensajeError").removeClass("display").addClass("no-display");
+
+        if (respuesta.Exito) {
+
+            if (respuesta.EstadoAutenticacion == 1) {
+
+                $(':input', '#frmLogin').not(':button, :submit, :checkbox').val('');
+                window.location.href = '/gestionelectronicajudicial/home/inicio';
+                $('body').modalmanager('loading');
+            } else if (respuesta.EstadoAutenticacion == 2) {
+                listarCircunscripciones();
+            } else if (respuesta.EstadoAutenticacion == 3) {
+                listarRolesCircunscripcion();
+            } else if (respuesta.EstadoAutenticacion == 4) {
+                $(':input', '#frmLogin').not(':button, :submit, :checkbox').val('');
+                window.location.href = '/gestionelectronicajudicial/login/cambiarclave';
+                $('body').modalmanager('loading');
+            }
+            else if (respuesta.EstadoAutenticacion == 5) {
+                listarDespachosJudiciales();
+            }
+        } else {
+            $("#mensajeError").html(respuesta.Mensaje);
+            $("#mensajeError").removeClass("no-display").addClass("display");
+            $("#CaptchaCode").val("");
+            //$("#CaptchaCode").Captcha.ReloadImage();
+            //reloadCaptcha();
+            $("#Login_ReloadIcon").trigger('click')
+            
+        }
+    }
+    //function reloadCaptcha() {
+    //    id = document.getElementById('Login_CaptchaImage');
+    //    id.src = "/BotDetectCaptcha.ashx?get=image&c=Login&t=d3f1dc57d538482ba1046655f049909d&d" + "=" + Math.random();
+
+    //}
+    function listarRolesCircunscripcion() {
+
+        $.ajax({
+            type: 'GET',
+            url: '/gestionelectronicajudicial/Login/ListarRolesCircunscripcion',
+            contentType: 'application/html; charset=utf-8'
+        })
+       .done(function (respuesta) {
+
+           if (respuesta.Exito == true) {
+
+               var ajax = portal.CargarHtmlEnModalYMostrar("panelBodyRoles", "", false, '/gestionelectronicajudicial/Login/ListarRol', null, true);
+               ajax.done(function (vista) {
+
+                   $("#divLogin").slideUp('slow');
+                   $('#divRol').removeClass('hidden');
+                   $("#divRol").slideDown('slow');
+
+                   var tabla = $('#panelBodyRoles').find('#tSeleccionRol');
+                   tabla.on('click', 'tr', function () {
+                       var codigo = $(this).attr('id');
+                       var descripcion = $(this).find('td').html();
+                       //Llamamos a la funcion que va a manejar el proceso al hacer click en la fila
+                       seleccionarFilaRol(codigo, descripcion);
+                   });
+
+               })
+           }
+           else {
+               $("#mensajeError").html(respuesta.Mensaje);
+               $("#mensajeError").removeClass("no-display").addClass("display");
+           }
+
+
+       })
+        .fail(function () {
+
+            $("#mensajeError").html(respuesta.Mensaje);
+            $("#mensajeError").removeClass("no-display").addClass("display");
+
+        });
+
+    }
+
+    function listarDespachosJudiciales() {
+
+        $.ajax({
+            type: 'GET',
+            url: '/gestionelectronicajudicial/Login/ListarDespachoJudicial',
+            contentType: 'application/html; charset=utf-8'
+        })
+        .done(function (respuesta) {            
+            $('#panelBodyDespachos').html(respuesta);            
+            $("#divLogin").slideUp('slow');
+            $("#divRol").slideUp('slow');
+            $("#divCircunscripcionRol").slideUp('slow');
+            $('#divDespacho').removeClass('hidden');
+            $("#divDespacho").slideDown('slow');
+
+            //Asignamos el evento click a las filas de la tabla que se encuentra en el modal
+
+            var tabla = $('#divDespacho').find('#tSeleccionDespachoJudicial');
+            tabla.on('click', 'tr', function () {
+                var codigo = $(this).attr('id');
+                var descripcion = $(this).find('td').html();
+                //Llamamos a la funcion que va a manejar el proceso al hacer click en la fila
+                seleccionarFilaDespachoJudicial(codigo);
+            });
+
+        })
+        .fail(function () {
+            $("#mensajeError").html("No es posible mostrar el componente de selección de DESPACHOS JUDICIALES. Por favor comunicar al administrador.");
+            $("#mensajeError").removeClass("no-display").addClass("display");
+        });
+    }
+
+    function listarCircunscripciones() {
+
+        $.ajax({
+            type: 'GET',
+            url: '/gestionelectronicajudicial/Login/ListarCircunscripcion',
+            contentType: 'application/html; charset=utf-8'
+        })
+        .done(function (respuesta) {
+
+            $('#panelBodyCircunscripcion').html(respuesta);
+            $("#divLogin").slideUp('slow');
+            $('#divCircunscripcionRol').removeClass('hidden');
+            $("#divCircunscripcionRol").slideDown('slow');
+
+            //Asignamos el evento click a las filas de la tabla que se encuentra en el modal
+
+            var tabla = $('#divCircunscripcionRol').find('#tSeleccionCircunscripcion');
+            tabla.on('click', 'tr', function () {
+                var codigo = $(this).attr('id');
+                var descripcion = $(this).find('td').html();
+                //Llamamos a la funcion que va a manejar el proceso al hacer click en la fila
+                seleccionarFilaCircunscripcion(codigo, descripcion);
+            });
+
+        })
+        .fail(function () {
+
+            $("#mensajeError").html("No es posible mostrar el componente de selección de CIRCUNSCRIPCION. Por favor comunicar al administrador.");
+            $("#mensajeError").removeClass("no-display").addClass("display");
+
+        });
+
+    }
+
+    function seleccionarFilaCircunscripcion(pCodigo, pDescripcion) {
+        //Se oculta el modal una vez seleccionado un registro de la tabla
+        $('#mCircunscripciones').modal('hide');
+        //Se llama a la accion que va a manejar la informacion seleccionada por el usuario
+        $.ajax({
+            type: 'POST',
+            url: '/gestionelectronicajudicial/Login/SeleccionarCircunscripcion',
+            data: JSON.stringify({ CodigoCircunscripcion: pCodigo, NombreCircunscripcion: pDescripcion }),
+            contentType: 'application/json; charset=utf-8'
+        })
+        .done(function (respuesta) {
+
+            if (respuesta.Exito) {
+
+                if (respuesta.EstadoAutenticacion == 1) {
+
+                    $(':input', '#frmLogin').not(':button, :submit, :checkbox').val('');
+                    window.location.href = '/gestionelectronicajudicial/Home/Inicio';
+                    $('body').modalmanager('loading');
+
+                } else if (respuesta.EstadoAutenticacion == 3) {
+                    listarRoles();
+
+                }
+                else if (respuesta.EstadoAutenticacion == 5) {
+                    listarDespachosJudiciales();
+
+                }
+            } else {
+
+                $("#mensajeError").html(respuesta.Mensaje);
+                $("#mensajeError").removeClass("no-display").addClass("display");
+            }
+
+        })
+        .fail(function () {
+
+            $("#mensajeError").html("Problemas al acceder a la función de selección de circunscripción");
+            $("#mensajeError").removeClass("no-display").addClass("display");
+
+        });
+    }
+
+    function listarRoles() {
+
+        var ajax = portal.CargarHtmlEnModalYMostrar("panelBodyRol", "", false, '/gestionelectronicajudicial/Login/ListarRol', null, true);
+        ajax.done(function (vista) {
+
+            $('#panelBodyRol').addClass('fa-border');
+            $('#panelRol').removeClass('hidden');
+
+            var tabla = $('#panelBodyRol').find('#tSeleccionRol');
+            tabla.on('click', 'tr', function () {
+                var codigo = $(this).attr('id');
+                var descripcion = $(this).find('td').html();
+                //Llamamos a la funcion que va a manejar el proceso al hacer click en la fila
+                seleccionarFilaRol(codigo, descripcion);
+            });
+        });
+
+    }
+
+    function seleccionarFilaRol(pCodigo, pDescripcion) {
+        //Se oculta el modal una vez seleccionado un registro de la tabla
+        $('#mRoles').modal('hide');
+        //Se llama a la accion que va a manejar la informacion seleccionada por el usuario
+        $.ajax({
+            type: 'POST',
+            url: '/gestionelectronicajudicial/Login/SeleccionarRol',
+            data: JSON.stringify({ CodigoRol: pCodigo, DescripcionRol: pDescripcion }),
+            contentType: 'application/json; charset=utf-8'
+        })
+        .done(function (respuesta) {
+
+            if (respuesta.Exito) {
+                if (respuesta.EstadoAutenticacion == 1) {
+
+                    $(':input', '#frmLogin').not(':button, :submit, :checkbox').val('');
+                    window.location.href = '/gestionelectronicajudicial/Home/Inicio';
+                    $('body').modalmanager('loading');
+
+                }
+                else if (respuesta.EstadoAutenticacion == 5) {
+                    listarDespachosJudiciales();
+                }
+            } else {
+                console.log(respuesta.Mensaje);
+                $("#mensajeError").html(respuesta.Mensaje);
+                $("#mensajeError").removeClass("no-display").addClass("display");
+            }
+        })
+        .fail(function () {
+            $("#mensajeError").html("Problemas al acceder a la función de selección de rol");
+            $("#mensajeError").removeClass("no-display").addClass("display");
+        })
+    }
+
+
+    function seleccionarFilaDespachoJudicial(pCodigoDespachoJudicial) {
+        //Se oculta el modal una vez seleccionado un registro de la tabla
+        $('#mDespachosJudiciales').modal('hide');
+        //Se llama a la accion que va a manejar la informacion seleccionada por el usuario
+        $.ajax({
+            type: 'POST',
+            url: '/gestionelectronicajudicial/Login/SeleccionarDespachoJudicial',
+            data: JSON.stringify({ CodigoDespachoJudicial: pCodigoDespachoJudicial }),
+            contentType: 'application/json; charset=utf-8'
+        })
+        .done(function (respuesta) {
+
+            if (respuesta.Exito) {
+                if (respuesta.EstadoAutenticacion == 1) {
+
+                    $(':input', '#frmLogin').not(':button, :submit, :checkbox').val('');
+                    window.location.href = '/gestionelectronicajudicial/Home/Inicio';
+                    $('body').modalmanager('loading');
+                }
+            } else {
+                console.log(respuesta.Mensaje);
+                $("#mensajeError").html(respuesta.Mensaje);
+                $("#mensajeError").removeClass("no-display").addClass("display");
+            }
+        })
+        .fail(function () {
+            $("#mensajeError").html("Problemas al acceder a la función de selección de despachos judiciales");
+            $("#mensajeError").removeClass("no-display").addClass("display");
+        })
+    }
+    </script>
+
+    <!-- end: JS -->
+</body>
+</html>

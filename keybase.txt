@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/wils0n
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://bib.villalba.is.eu.org
+  * I am wils0n (https://keybase.io/wils0n) on keybase.
+  * I have a public key ASDUHsMMyECsWcJPyfR4VIsCpX1OWUvO0Rg7lqtV_nonIQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01207ac02f5b7700528056399791a898a5610ffebf0af42cfb864a590ad95c191a240a",
+      "host": "keybase.io",
+      "kid": "0120d41ec30cc840ac59c24fc9f478548b02a57d4e594bced1183b96ab55fe7a27210a",
+      "uid": "4e88598782bf4a4df6e0cab972493f19",
+      "username": "wils0n"
+    },
+    "merkle_root": {
+      "ctime": 1758035173,
+      "hash": "7b4b6f1166a42b0f19d210d0760375bbf4dd8d853657481761d243390513aa8489f8383856340e6e36f3a96eb6f26b4dba69425d9ea876d1e4cf71f2657df2b1",
+      "hash_meta": "04e8bafc781f8a649fd473e36fda81395c8969679c57a58d58266a9bad6a67bc",
+      "seqno": 27093046
+    },
+    "service": {
+      "entropy": "PErmM5FA/1hsJiH/v2Ro/8oN",
+      "hostname": "bib.villalba.is.eu.org",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.5.1"
+  },
+  "ctime": 1758035307,
+  "expire_in": 504576000,
+  "prev": "afd66c99c7ec656d8da9d4f655502d477d865a06d2ac2074a93a2c74a7d6d82f",
+  "seqno": 136,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg1B7DDMhArFnCT8n0eFSLAqV9TllLztEYO5arVf56JyEKp3BheWxvYWTES5cCzIjEIK/WbJnH7GVtjanU9lVQLUd9hloG0qwgdKk6LHSn1tgvxCDHdDGxLRgGTXHNWOrG3TT/Y8CK/MuUBkeGiidef3W2BAIBwqNzaWfEQEOiH6bzU8Yn4qm1W22UHdwiw04KWoH68lG3dW207aWY9JLW2xsiDLVSLLi2hPnAT1AyQxEalq2MAO08wjblswOoc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCAtFwZbTWz33HiN5LYORWTYSHtkGOKe9gbZqGnexnEZyKN0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/wils0n
+
+==================================================================

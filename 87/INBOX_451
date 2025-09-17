@@ -1,0 +1,241 @@
+Return-Path: <ruben_amarilla2@hacienda.gov.py>
+Delivered-To: wilson@villalba.is
+Received: from mp0.migadu.com ([2001:41d0:403:4876::])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by ms18.migadu.com with LMTPS
+	id OEcIHvpTYGZHEAEAqHPOHw:P1
+	(envelope-from <ruben_amarilla2@hacienda.gov.py>)
+	for <wilson@villalba.is>; Wed, 05 Jun 2024 14:03:06 +0200
+Received: from aspmx1.migadu.com ([2001:41d0:403:4876::])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by mp0.migadu.com with LMTPS
+	id OEcIHvpTYGZHEAEAqHPOHw
+	(envelope-from <ruben_amarilla2@hacienda.gov.py>)
+	for <wilson@villalba.is>; Wed, 05 Jun 2024 14:03:06 +0200
+X-Envelope-To: wilson@villalba.is
+Authentication-Results: aspmx1.migadu.com;
+	dkim=none;
+	spf=pass (aspmx1.migadu.com: domain of ruben_amarilla2@hacienda.gov.py designates 216.71.146.13 as permitted sender) smtp.mailfrom=ruben_amarilla2@hacienda.gov.py;
+	dmarc=none
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=villalba.is;
+	s=key1; t=1717588986;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=m8Ns4Q2W8+EW9Pv1bAp0wJDrzAOd5aGPPb+Q6x4c7WM=;
+	b=CuFEw2iykYhDRpCzq9VheIpozCHmJwKM5WlpVqQI1LnN9TQBS1C1tPfAnC5uxmwTe/Hox2
+	w/pU/kPQElReCpYxjlnR+VUT/ClbVNbeFroz6WpVAm2Jm7Th11SgvR1/cr7Ake0Tp81e5M
+	BoDYME8vxSQrVdSPrKdXhqopeGLQo+cCBMzZKhN+rUl03BVotsIGdr+3KXg0/Eyy8KXJ/O
+	l1MKzBeAJ8C78kZXGdGMhnQOdOLr1h9fvUzsSMzKNeXYH6q27lh+uSBX7xbmb/mq/UaTVX
+	5ZLT6x/4LwpNRoyt0tsJ8kuq35JzP2oraUde4wCVt6UihHp+Dy/pWL0JvQxNaw==
+ARC-Authentication-Results: i=1;
+	aspmx1.migadu.com;
+	dkim=none;
+	spf=pass (aspmx1.migadu.com: domain of ruben_amarilla2@hacienda.gov.py designates 216.71.146.13 as permitted sender) smtp.mailfrom=ruben_amarilla2@hacienda.gov.py;
+	dmarc=none
+ARC-Seal: i=1; s=key1; d=villalba.is; t=1717588986; a=rsa-sha256; cv=none;
+	b=Y+yX/DiudebzRfmcdFX8s08ocEwx8QLGThfPYCchPzn16kanX33OF/pHMNFl9bk/6uux4J
+	4fUX5+L8QuuHLD5+hxAcMUVbBp4RViJWpNBPfQl4kV8yBJ2qBRHh49ipZnslAWoUpUmGTT
+	w870gRV2juq4giGTWz6SAkT67N7i87t6e6Pt4iinHi5wKRaR/rP59K8wBsk1N5gtzWWWp0
+	D/sfR5d/P7KYfeDD4oXXpjJ3zETDTA/MkpSaBopLviWIb5ea+GZ3a/4F3w7WUX80vVBno7
+	ayCy+4ssrSCsMjWky7ZKGXEJtT9aoTe+iRvrnYZvxGzpQuXKq6iQBXL+i0RlIQ==
+Received: from esa.hc6486-87.iphmx.com (esa.hc6486-87.iphmx.com [216.71.146.13])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by aspmx1.migadu.com (Postfix) with ESMTPS id 895486BA0E
+	for <wilson@villalba.is>; Wed,  5 Jun 2024 14:03:01 +0200 (CEST)
+X-CSE-ConnectionGUID: hpN3F5XRSP6Ku84sz8lEVQ==
+X-CSE-MsgGUID: AFUnIqT7TeCWCBNUkmZk6Q==
+Received-SPF: SoftFail (esa.hc6486-87.iphmx.com: domain of
+  ruben_amarilla2@hacienda.gov.py is inclined to not designate
+  216.184.116.72 as permitted sender) identity=mailfrom;
+  client-ip=216.184.116.72; receiver=esa.hc6486-87.iphmx.com;
+  envelope-from="ruben_amarilla2@hacienda.gov.py";
+  x-sender="ruben_amarilla2@hacienda.gov.py";
+  x-conformance=spf_only; x-record-type="v=spf1";
+  x-record-text="v=spf1 exists:%{i}.spf.hc6486-87.iphmx.com
+  ~all"
+X-Ironport-Dmarc-Check-Result: validskip
+X-ThreatScanner-Verdict: Negative
+X-IPAS-Result: =?us-ascii?q?A2FcAgChUmBmjEh0uNhXAxwBAQEBAQEHAQESAQEEBAEBQ?=
+ =?us-ascii?q?AmBRoJEfIENCU6EVpFtgSmRHo1CDwEBAQEBAQEBAUILBAEBAwEDhH8CiGMwL?=
+ =?us-ascii?q?xMBAgQBAQEBAwIDAQEBAQEBAQEBBQEBBgEBAQEBAQIEBgECEAEBAQFAEDWFL?=
+ =?us-ascii?q?0UNgmAXggMBAQEBAQEBAQEnKwIfagMDCAIZBV4DAgkaAiYCAhgQLgIEEwsFg?=
+ =?us-ascii?q?nABgmQUpVQBiyOBATGBAeAXBoEaLogxAYU4hQSCT4EVNYJ1PoRkJgaDDoJpB?=
+ =?us-ascii?q?JYCg1qDaoQqgUyCQYokCUEKfRwDWSETAVUTDQoLNAMHHQIWAxsUBDAPCQsmK?=
+ =?us-ascii?q?gY5AhIIBAYGBlk0CQQjAwgEA0IDIHERAwQaBAsHdYFxgTQEE0eBN4Ioh0gMg?=
+ =?us-ascii?q?y+BdCmCEIIMS2yEBIFrDGGIdgWBCzCBEYEkQgGCFoFHax0FCzADCxgNFDQRL?=
+ =?us-ascii?q?DUUG0RTGwemeoQVgQZnMYI2AZM7nCeVBQYHkB+PaAGGBpdGknKYZY12ljCFG?=
+ =?us-ascii?q?YENOoF/KwqCKYFJQBIZD446iUbEXVw7AgcBCgEBAwkBgjmGNi0FgUgBAQ?=
+IronPort-PHdr: A9a23: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
+ DgHypja5xajwFwxdRq0
+IronPort-Data: A9a23:6LJY1KpRI8ClCxzwRg3m/GEz4G9eBmKfZRIvgKrLsJaIsI4StFCzt
+ garIBnXP/+LYTf8KN8jbYrg9U4CuZfVx4M3SQZorCAwQS4U9uPIVI+TRqvS04J+DSFhoGZPt
+ Zh2hgzodZhsJpP6jknzauCJQV5UjPjQF+GU5NbsY303GEk9Dn981HqPosZh6qZwm9+1HgiRj
+ t37pszbKTeN1iV9d2kZ8Mpvkjs21BjJkG1e5gxWicxj5geEyyFLVM9Hf8ldElOhKmVqNr/iL
+ wr85Ozhlo/p109FIs+olL/9bnoLTtb6VSCSimBbUrSVmRNLoCo/yM4TbJLwvm8O1l1lN/goo
+ Dl8ncTYpTUBZ8Ugq8xBO/VsKBySCIUdkFPxzdpThuTIp6HOWyOEL/yDlyjaN6VAkgp8KTkmG
+ fD1tFnhx/1M7g676OvTdwViuigsBMnzGtgx50Fa9gmHLut2HYvRE6Hn2+YNiV/chugWdRrfT
+ 88QaD42NFLAahZON1EbAdQxm/nunmiXnz9w8gvL4/Nnvy6KlVI3j+KF3Nn9I7RmQe1Pg0yVo
+ FXP+m3jAxUePYa3yTOO83+qiuaJkiTlHpoDfFG93qQx2gDNnwT/DjU/e2a9gOCF1XKzcO10A
+ Wop+S8crvYLoRnDot7VBEDh/CPb73bwQeF4DOw+8waL4rTV5wKQAmINCD9aAOHKr+c2Qic2k
+ wDT2YqwW3o24OHTEyvDsLyTtTq5Pm4eKmpEfT5soRY5D8fLoJkV1TySfuxYKPCWk42pAiOgx
+ x20lX1r71kMtvIj26K+9FHBpjujoJnVUwI4jjk7uEr5sWuVg6b5NuSVBUjn0BpWEGqOZmGw1
+ EXoduCe6/sSSM7X0nXUHqNUTO3vva/bdjbbmVdkGN8q8DHr42/LkWFsDNNWeB0B3iUsIG6Bj
+ KrvVeV5vsY70JyCN/YfXm5JI552pZUM7+jNWPHOdcZpaZNsbgKB9ywGTRfPhj+wyhZ0yftia
+ c7znSOQ4ZAyVf0PIN2eHLl17FPX7nllrY8ubcunn035uVZgTC7IIVv6DLd+Rrtktf/Z/1S9H
+ yd3K8aO2xRCS6X1ayPT/MYONllCLH4wQ/jLRz9/Koa+zv5dMDh5UZf5mOpxE7GJaowJzo/g5
+ G+mYEZExTLX3DufQel8Qiw5OeyHsFcWhS5TABHAyn7zgCF/Pt7xtflBH3b1FJF+nNFeITdPZ
+ 6FtU6297j5nE1wrJxx1gVjBQE5KLHxHRj5i+wKlaTM+cphsTkrG/cGiZhqHGOwmEH+srcVny
+ 1G//lizfKfvjDiOwCobhDxDAr9xUbUgdDpOYnb1
+IronPort-HdrOrdr: A9a23:sVUKkqCnRLaUZt3lHemr55DYdb4zR+YMi2TDpHoBMSC9Ffbo8P
+ xG/c5rsSMc5wxhO03I9ertBEDEexLhHP1OkOws1NWZLWvbUQKTRekIh+bfKn/bdREWndQ86U
+ 4USdkGNDSfNzdHZL7BkW+FL+o=
+X-Talos-CUID: =?us-ascii?q?9a23=3A3tZAvWryjlribxhrs9IJFgrmUcA9VCbzkUfqGHf?=
+ =?us-ascii?q?mKns5FKaHGVu9xpoxxg=3D=3D?=
+X-Talos-MUID: 9a23:R50FygZbYvusWuBTnhHRghB7CJhU7o+RI2orrJYDicraDHkl
+X-IronPort-Anti-Spam-Filtered: true
+Received: from host-72.116.184.216.copaco.com.py (HELO mail10.hacienda.gov.py) ([216.184.116.72])
+  by esa3.hc6486-87.iphmx.com with ESMTP; 05 Jun 2024 08:02:52 -0400
+Received: from localhost (localhost.localdomain [127.0.0.1])
+	by mail10.hacienda.gov.py (Postfix) with ESMTP id 1E10312A8189
+	for <wilson@villalba.is>; Wed,  5 Jun 2024 08:02:52 -0400 (-04)
+Received: from mail10.hacienda.gov.py ([127.0.0.1])
+	by localhost (mail10.hacienda.gov.py [127.0.0.1]) (amavisd-new, port 10026)
+	with ESMTP id CpAVEKcCELKz for <wilson@villalba.is>;
+	Wed,  5 Jun 2024 08:02:52 -0400 (-04)
+Received: from AISGSTOCK3 (unknown [10.2.134.2])
+	by mail10.hacienda.gov.py (Postfix) with ESMTPSA id 0AA5912A8173
+	for <wilson@villalba.is>; Wed,  5 Jun 2024 08:02:51 -0400 (-04)
+From: <ruben_amarilla2@hacienda.gov.py>
+To: <wilson@villalba.is>
+References: <7cd89431-b5a2-480b-9322-7dd543a5da5e@villalba.is> <019b01dab6ad$ba233d40$2e69b7c0$@hacienda.gov.py>
+In-Reply-To: <019b01dab6ad$ba233d40$2e69b7c0$@hacienda.gov.py>
+Subject: =?UTF-8?Q?RE:_Remisi=C3=B3n_de_Oficio_Electr=C3=B3ni?=
+	=?UTF-8?Q?co?=
+Date: Wed, 5 Jun 2024 08:02:51 -0400
+Message-ID: <000e01dab740$4a4d49a0$dee7dce0$@hacienda.gov.py>
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQEXBnMDlkk4HvkOBJv6TeIX3fM+ZAH/zflFszB0+rA=
+Content-Language: es
+X-Migadu-Country: US
+X-Migadu-Flow: FLOW_IN
+X-Spam-Score: -4.22
+X-Migadu-Queue-Id: 895486BA0E
+X-Migadu-Scanner: mx10.migadu.com
+X-Migadu-Spam-Score: -4.22
+
+
+Buen d=C3=ADa.
+=20
+Se confirma recepci=C3=B3n, siendo asignado SIME Electr=C3=B3nico =
+N=C2=B0 45383/2024, pudiendo realizar el seguimiento de su documento en =
+la P=C3=A1gina Web de este Ministerio, Servicios On Line, Estado de =
+Expedientes https://consulta.hacienda.gov.py/sime-client/=20
+
+Atentamente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----Mensaje original-----
+De: Fredy Gimenez <fredy_gimenez@hacienda.gov.py>=20
+Enviado el: martes, 4 de junio de 2024 14:34
+Para: ruben_amarilla2@hacienda.gov.py
+Asunto: RV: Remisi=C3=B3n de Oficio Electr=C3=B3nico
+
+
+
+
+Florencio V. Gim=C3=A9nez A.
+Jefe Dpto. Registros y Tr=C3=A1mites =20
+Coord. Implementaci=C3=B3n SIME II
+Secretaria General Institucional
+(021) 414 6535=20
+
+=20
+
+
+-----Mensaje original-----
+De: Wilson Villalba <wilson@villalba.is>=20
+Enviado el: martes, 4 de junio de 2024 12:09
+Para: secretaria_general@hacienda.gov.py
+Asunto: Remisi=C3=B3n de Oficio Electr=C3=B3nico
+
+Se=C3=B1ores
+
+Secretar=C3=ADa General:
+
+De mi mayor consideraci=C3=B3n.
+
+Wilson Villalba, Matricula CSJ 7407, abogado, por la representaci=C3=B3n =
+de la causa =E2=80=9CBLANCA NIEVES RODRIGUEZ BRAUN C/ GOBIERNO DPTO DE =
+SAN PEDRO S/ EJECUCI=C3=93N DE RESOLUCIONES JUDICIALES=E2=80=9D a la =
+Secretar=C3=ADa expreso:
+
+Remito adjunto oficio electr=C3=B3nico firmado por la LA JUEZA DE =
+PRIMERA INSTANCIA EN LO CIVIL, COMERCIAL Y LABORAL, DEL PRIMER TURNO, DE =
+LA CIRCUNSCRIPCI=C3=93N JUDICIAL DE SAN PEDRO, ABG. NORMA MABEL FLEITAS =
+A.
+
+El mismo, adem=C3=A1s de la firma, cuenta con un c=C3=B3digo QR para la =
+validaci=C3=B3n seg=C3=BAn expresa el mismo texto.
+
+Ruego acuse del presente correo.
+
+Muy atte.
+
+

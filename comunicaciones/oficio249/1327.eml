@@ -1,0 +1,295 @@
+Return-Path: <gobersanpedro018@gmail.com>
+Delivered-To: wilson@villalba.is
+Received: from mp2.migadu.com ([2001:41d0:403:4876::])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by ms18.migadu.com with LMTPS
+	id kPeBHpn28maSgAAAe85BDQ:P1
+	(envelope-from <gobersanpedro018@gmail.com>)
+	for <wilson@villalba.is>; Tue, 24 Sep 2024 19:27:53 +0200
+Received: from aspmx1.migadu.com ([2001:41d0:403:4876::])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by mp2.migadu.com with LMTPS
+	id kPeBHpn28maSgAAAe85BDQ
+	(envelope-from <gobersanpedro018@gmail.com>)
+	for <wilson@villalba.is>; Tue, 24 Sep 2024 19:27:53 +0200
+X-Envelope-To: wilson@villalba.is
+Authentication-Results: aspmx1.migadu.com;
+	none
+Received: from mail-oa1-x36.google.com (mail-oa1-x36.google.com [IPv6:2001:4860:4864:20::36])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by aspmx1.migadu.com (Postfix) with ESMTPS id 6753536720
+	for <wilson@villalba.is>; Tue, 24 Sep 2024 19:27:50 +0200 (CEST)
+Received: by mail-oa1-x36.google.com with SMTP id 586e51a60fabf-277dd69d6d6so45622fac.0
+        for <wilson@villalba.is>; Tue, 24 Sep 2024 10:27:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1727198863; x=1727803663; darn=villalba.is;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=Il3PbPsTblGXV+T/jkATEf2Ec2MDv38hKw818oC8lT4=;
+        b=Vrzfnck8zWHnXU77yfyLV8kJAWzbA7vU/jE3MCPEd9GFTH3a063waJmaP77mQAaBNO
+         uO5reT7ZwakY7lkmwkZTjczXEZ9Pj31MGsYcejkrMpeCG3P7039MXJMGNz7xJxxKMdaB
+         SD2IrjCtbB4KdVUXCTHcj3t5qZ6boFhs+i9EnNo5vY58jFn+bzrWlp0idsJ7GOjaNU32
+         KqdTbettWxSeMiWXF1HBthCPRuq+xuLr6vy+65clEdgNnkYDZAy2Gz09F4J6nkkeQu4l
+         fFPBM8l8MSfryY1p/jlBdANDjVb9rtVUS9U0jmRQShlTh+2+riA6kcCQBzLZcseuGXet
+         i1ng==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1727198863; x=1727803663;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Il3PbPsTblGXV+T/jkATEf2Ec2MDv38hKw818oC8lT4=;
+        b=W5MH8NumSeobPuVWHqu4zpZeDt22cXwnplKztfbUhuMBXgWFasWg7voDAnxDigk59+
+         wBVzObNVb8MBGYxw5araZpgGwRQr9ryFH6HsemUeaBRTGoyxLfmwyHI4g5+42n+SNhVd
+         g8lglfsAPmRg2N5U8NBUQvp8ByqeOVewh7UHfnerh7Hsv18XUtwiy8fAhdwbMbgWhsIn
+         8INBnVE4iRIn99hMOqdvJm4c5g/79f3+o4wKt1aA3maKk2K5s5TlasRgMT1k4+gx9bhT
+         tGb/8Zs4P05XhvJYTmxgDoNKX50bTWrY7PSHGhWA9GL5JJWCjUmlbLnI47kD8OC8jjK9
+         VlqA==
+X-Gm-Message-State: AOJu0YxGSbrQJCszTNhz1XoK3F0Y7pWNbhaZCo+/HI1YkS/YERFpyIUn
+	BIFhAucDjAEN/IbZtXHgYueefHLUiFTfdVsOIpFkxmAb0RRbtCoCl1bklZfZLleDvWUHKddBq21
+	foT+EJ4+GlbpKR7l6S3N7amRHN8qEfw==
+X-Google-Smtp-Source: AGHT+IGZQrUx4OAjEidB6rH7qynUzUuJqVnJCWDwUrji542nj81aIy8a5cF0lceRp6kpTsXYFwtmUvsHpbNewpGhVjg=
+X-Received: by 2002:a05:6870:569f:b0:27b:b800:2193 with SMTP id
+ 586e51a60fabf-283ab89ad54mr2075723fac.10.1727198862825; Tue, 24 Sep 2024
+ 10:27:42 -0700 (PDT)
+MIME-Version: 1.0
+References: <82303afd-ab71-4135-8a1f-48d1af25d597@villalba.is>
+In-Reply-To: <82303afd-ab71-4135-8a1f-48d1af25d597@villalba.is>
+From: "Gobern. San Pedro - S. de Prensa" <gobersanpedro018@gmail.com>
+Date: Tue, 24 Sep 2024 13:27:32 -0400
+Message-ID: <CADYTuY=hpSRV6bcKD2PG1P=dPqOOh4JMjrHfBVgr8jHQ6+pY4Q@mail.gmail.com>
+Subject: =?UTF-8?Q?Re=3A_Remisi=C3=B3n_de_Oficio_Electr=C3=B3nico?=
+To: Wilson Villalba <wilson@villalba.is>
+Content-Type: multipart/alternative; boundary="000000000000ace01d0622e0d283"
+X-Migadu-Flow: FLOW_IN
+X-Migadu-Country: US
+X-Migadu-Spam-Score: -4.00
+X-Spam-Score: -4.00
+X-Migadu-Queue-Id: 6753536720
+X-Migadu-Scanner: mx10.migadu.com
+
+--000000000000ace01d0622e0d283
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Acuso recibo. Gracias!
+
+
+Secretaria de Prensa y Protocolo
+Gobernacion del II Departamento San Pedro
+Tel. 0342222495
+
+
+
+El lun, 23 sept 2024 a las 15:35, Wilson Villalba (<wilson@villalba.is>)
+escribi=C3=B3:
+
+> Se=C3=B1ores:
+>
+> Gobernaci=C3=B3n de San Pedro
+>
+> Les remito adjunto oficio electr=C3=B3nico N=C2=BA 249.
+>
+> --- Inicio de su texto
+>
+> i OFICIO  N=C2=BA249.SAN  PEDRO DE  YCUAMANDYYU, 12 de Setiembre de 2024
+> SE=C3=91OR/A.
+> GOBERNACION DE SAN PEDRO.P R E S E N T E: LA  JUEZA DE PRIMERA INSTANCIA
+> EN LO
+> CIVIL, COMERCIAL Y LABORAL DE PRIMER TURNO, DE LA CIRCUNSCRIPCI=C3=93N
+> JUDICIAL  DE
+> SAN PEDRO DEL YCUAMANDYYU,  ABG NORMA MABEL  FLEITAS AQUINO, se dirige a
+> usted
+> en los autos: =E2=80=9CBLANCA NIEVES RODRIGUEZ BRAUN C/ GOBIERNO  DPTO DE=
+ SAN
+> PEDRO S/
+> EJECUCI=C3=93N DE  RESOLUCIONES JUDICIALES=E2=80=9D, a fin de que  inform=
+e en  la
+> brevedad
+> posible, acerca de la recepci=C3=B3n de transferencias del Presupuesto de=
+l
+> A=C3=B1o 2024
+> afectadas  al  cumplimiento del A.I. N=C2=B0 259  de  fecha 12 de octubre
+> de  2022
+> dictado en los presentes autos :  y en su caso las fechas de los
+> dep=C3=B3sitos  en
+> la cuenta judicial abierta en autos a la orden del  Juzgado  y a nombre
+> de  la
+> presente  causa en el Banco  Nacional  de Fomento N=C2=B0
+> 060.17.101864/9.SALUDALE
+> ATENTAMENTE.  ANTE M=C3=8D: Se hace saber al destinatario de este documen=
+to
+> que el
+> mismo cuenta con el C=C3=B3digo  QR,  por lo cual,  para tener certeza  d=
+e
+> que este
+> documento  es v=C3=A1lido, deber=C3=A1 utilizar  el lector  del C=C3=B3di=
+go QR, siendo
+> ya en
+> consecuencia, innecesaria la autenticaci=C3=B3n manual de la Actuaria del
+> Juzgado
+> conforme Acordada 1366/2019.-
+>
+> Para conocer la validez del documento, verifique aqu=C3=AD.
+>
+> Firmado digitalmente por: NORMA MABEL FLEITAS AQUINO (JUEZ/A)
+>
+> Firmado digitalmente por: LUISA HAUDENSCHILD ESPINOZA (ACTUARIO/A)
+>
+> --- Fin de su texto.
+>
+>
+> Muy respetuosamente solicito se acuse recibo de la presente documentaci=
+=C3=B3n.
+>
+> A  los  fines  legales  pertinentes,  este  email permanecer=C3=A1 en  la
+> carpeta
+> https://rbraun.villalba.is/comunicaciones/gsp/ junto con cualquiera
+> otro  que
+> se  haya  hecho antes y  que se  har=C3=A1n  luego,  con  firmas  y sello=
+s
+> tiempo
+> adicionales.
+>
+> Wilson Villalba, ab.
+>
+> ps:  Art=C3=ADculo 4=C2=B0.-  Valor jur=C3=ADdico de los mensajes de  dat=
+os. Se
+> reconoce  el
+> valor  jur=C3=ADdico de los mensajes  de datos  y no se  negar=C3=A1n efe=
+ctos
+> jur=C3=ADdicos,
+> validez o fuerza obligatoria a la informaci=C3=B3n por la sola raz=C3=B3n=
+ de que
+> est=C3=A9 en
+> forma  de  mensaje de datos. Tampoco se  negar=C3=A1n efectos jur=C3=ADdi=
+cos,
+> validez ni
+> fuerza obligatoria a la informaci=C3=B3n por la sola raz=C3=B3n de que no=
+ est=C3=A9
+> contenida
+> en el mensaje de datos que se supone  ha de dar lugar a este efecto
+> jur=C3=ADdico,
+> sino que figure simplemente en el mensaje de datos en forma de remisi=C3=
+=B3n.
+>
+>
+
+--000000000000ace01d0622e0d283
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Acuso recibo. Gracias!<br clear=3D"all"><div><div dir=3D"l=
+tr" class=3D"gmail_signature" data-smartmail=3D"gmail_signature"><div dir=
+=3D"ltr"><div><br></div><div><img width=3D"200" height=3D"66" src=3D"https:=
+//ci3.googleusercontent.com/mail-sig/AIorK4zLhUq5Lwc9AyI9yDeLgivSTSZctC9lBz=
+ZSn44XTC1jiUqCLAq25ORZoNzxGuduVc4uo1nAahq_OrJ57n2aBTJR69zkW4bTTwbs1_B9ZMczw=
+D4"><br></div>Secretaria de Prensa y Protocolo<div>Gobernacion del II Depar=
+tamento San Pedro</div><div>Tel. 0342222495</div><div><br></div></div></div=
+></div><br></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"g=
+mail_attr">El lun, 23 sept 2024 a las 15:35, Wilson Villalba (&lt;<a href=
+=3D"mailto:wilson@villalba.is">wilson@villalba.is</a>&gt;) escribi=C3=B3:<b=
+r></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex=
+;border-left:1px solid rgb(204,204,204);padding-left:1ex">Se=C3=B1ores:<br>
+<br>
+Gobernaci=C3=B3n de San Pedro<br>
+<br>
+Les remito adjunto oficio electr=C3=B3nico N=C2=BA 249.<br>
+<br>
+--- Inicio de su texto<br>
+<br>
+i OFICIO=C2=A0 N=C2=BA249.SAN=C2=A0 PEDRO DE=C2=A0 YCUAMANDYYU, 12 de Setie=
+mbre de 2024=C2=A0 <br>
+SE=C3=91OR/A.<br>
+GOBERNACION DE SAN PEDRO.P R E S E N T E: LA=C2=A0 JUEZA DE PRIMERA INSTANC=
+IA <br>
+EN LO<br>
+CIVIL, COMERCIAL Y LABORAL DE PRIMER TURNO, DE LA CIRCUNSCRIPCI=C3=93N <br>
+JUDICIAL=C2=A0 DE<br>
+SAN PEDRO DEL YCUAMANDYYU,=C2=A0 ABG NORMA MABEL=C2=A0 FLEITAS AQUINO, se d=
+irige a <br>
+usted<br>
+en los autos: =E2=80=9CBLANCA NIEVES RODRIGUEZ BRAUN C/ GOBIERNO=C2=A0 DPTO=
+ DE SAN <br>
+PEDRO S/<br>
+EJECUCI=C3=93N DE=C2=A0 RESOLUCIONES JUDICIALES=E2=80=9D, a fin de que=C2=
+=A0 informe en=C2=A0 la=C2=A0 <br>
+brevedad<br>
+posible, acerca de la recepci=C3=B3n de transferencias del Presupuesto del =
+<br>
+A=C3=B1o 2024<br>
+afectadas=C2=A0 al=C2=A0 cumplimiento del A.I. N=C2=B0 259=C2=A0 de=C2=A0 f=
+echa 12 de octubre=C2=A0 <br>
+de=C2=A0 2022<br>
+dictado en los presentes autos :=C2=A0 y en su caso las fechas de los <br>
+dep=C3=B3sitos=C2=A0 en<br>
+la cuenta judicial abierta en autos a la orden del=C2=A0 Juzgado=C2=A0 y a =
+nombre <br>
+de=C2=A0 la<br>
+presente=C2=A0 causa en el Banco=C2=A0 Nacional=C2=A0 de Fomento N=C2=B0 <b=
+r>
+060.17.101864/9.SALUDALE<br>
+ATENTAMENTE.=C2=A0 ANTE M=C3=8D: Se hace saber al destinatario de este docu=
+mento <br>
+que el<br>
+mismo cuenta con el C=C3=B3digo=C2=A0 QR,=C2=A0 por lo cual,=C2=A0 para ten=
+er certeza=C2=A0 de <br>
+que este<br>
+documento=C2=A0 es v=C3=A1lido, deber=C3=A1 utilizar=C2=A0 el lector=C2=A0 =
+del C=C3=B3digo QR, siendo=C2=A0 <br>
+ya en<br>
+consecuencia, innecesaria la autenticaci=C3=B3n manual de la Actuaria del=
+=C2=A0 <br>
+Juzgado<br>
+conforme Acordada 1366/2019.-<br>
+<br>
+Para conocer la validez del documento, verifique aqu=C3=AD.<br>
+<br>
+Firmado digitalmente por: NORMA MABEL FLEITAS AQUINO (JUEZ/A)<br>
+<br>
+Firmado digitalmente por: LUISA HAUDENSCHILD ESPINOZA (ACTUARIO/A)<br>
+<br>
+--- Fin de su texto.<br>
+<br>
+<br>
+Muy respetuosamente solicito se acuse recibo de la presente documentaci=C3=
+=B3n.<br>
+<br>
+A=C2=A0 los=C2=A0 fines=C2=A0 legales=C2=A0 pertinentes,=C2=A0 este=C2=A0 e=
+mail permanecer=C3=A1 en=C2=A0 la=C2=A0 <br>
+carpeta<br>
+<a href=3D"https://rbraun.villalba.is/comunicaciones/gsp/" rel=3D"noreferre=
+r" target=3D"_blank">https://rbraun.villalba.is/comunicaciones/gsp/</a> jun=
+to con cualquiera <br>
+otro=C2=A0 que<br>
+se=C2=A0 haya=C2=A0 hecho antes y=C2=A0 que se=C2=A0 har=C3=A1n=C2=A0 luego=
+,=C2=A0 con=C2=A0 firmas=C2=A0 y sellos=C2=A0 <br>
+tiempo<br>
+adicionales.<br>
+<br>
+Wilson Villalba, ab.<br>
+<br>
+ps:=C2=A0 Art=C3=ADculo 4=C2=B0.-=C2=A0 Valor jur=C3=ADdico de los mensajes=
+ de=C2=A0 datos. Se <br>
+reconoce=C2=A0 el<br>
+valor=C2=A0 jur=C3=ADdico de los mensajes=C2=A0 de datos=C2=A0 y no se=C2=
+=A0 negar=C3=A1n efectos <br>
+jur=C3=ADdicos,<br>
+validez o fuerza obligatoria a la informaci=C3=B3n por la sola raz=C3=B3n d=
+e que <br>
+est=C3=A9 en<br>
+forma=C2=A0 de=C2=A0 mensaje de datos. Tampoco se=C2=A0 negar=C3=A1n efecto=
+s jur=C3=ADdicos, <br>
+validez ni<br>
+fuerza obligatoria a la informaci=C3=B3n por la sola raz=C3=B3n de que no e=
+st=C3=A9 <br>
+contenida<br>
+en el mensaje de datos que se supone=C2=A0 ha de dar lugar a este efecto <b=
+r>
+jur=C3=ADdico,<br>
+sino que figure simplemente en el mensaje de datos en forma de remisi=C3=B3=
+n.<br>
+<br>
+</blockquote></div>
+
+--000000000000ace01d0622e0d283--

@@ -1,0 +1,133 @@
+Return-Path: <>
+Delivered-To: wilson@villalba.is
+Received: from mp2.migadu.com ([2001:41d0:1004:224b::])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by ms18.migadu.com with LMTPS
+	id 6FILNxrD8WbnxQAAe85BDQ:P1
+	(envelope-from <>)
+	for <wilson@villalba.is>; Mon, 23 Sep 2024 21:35:55 +0200
+Received: from mta0.migadu.com ([2001:41d0:1004:224b::])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by mp2.migadu.com with LMTPS
+	id 6FILNxrD8WbnxQAAe85BDQ
+	(envelope-from <>)
+	for <wilson@villalba.is>; Mon, 23 Sep 2024 21:35:54 +0200
+Received: by mta0.migadu.com (Postfix)
+	id DD5DEFCEE; Mon, 23 Sep 2024 19:35:54 +0000 (UTC)
+Date: Mon, 23 Sep 2024 19:35:54 +0000 (UTC)
+From: Mail Delivery System <MAILER-DAEMON@migadu.com>
+Subject: Undelivered Mail Returned to Sender
+To: wilson@villalba.is
+Auto-Submitted: auto-replied
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="4B60D5079C.1727120154/mta0.migadu.com"
+Content-Transfer-Encoding: 8bit
+Message-Id: <20240923193554.DD5DEFCEE@mta0.migadu.com>
+
+This is a MIME-encapsulated message.
+
+--4B60D5079C.1727120154/mta0.migadu.com
+Content-Description: Notification
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+This is the mail system at host mta0.migadu.com.
+
+I'm sorry to have to inform you that your message could not
+be delivered to one or more recipients. It's attached below.
+
+For further assistance, please send mail to postmaster.
+
+If you do so, please include this problem report. You can
+delete your own text from the attached returned message.
+
+                   The mail system
+
+<finanzas@sanpedro.gov.py>: host sanpedro.gov.py[213.199.41.121] said: 550 No
+    Such User Here (in reply to RCPT TO command)
+
+--4B60D5079C.1727120154/mta0.migadu.com
+Content-Description: Delivery report
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; mta0.migadu.com
+X-Postfix-Queue-ID: 4B60D5079C
+X-Postfix-Sender: rfc822; wilson@villalba.is
+Arrival-Date: Mon, 23 Sep 2024 19:35:07 +0000 (UTC)
+
+Final-Recipient: rfc822; finanzas@sanpedro.gov.py
+Original-Recipient: rfc822;finanzas@sanpedro.gov.py
+Action: failed
+Status: 5.0.0
+Remote-MTA: dns; sanpedro.gov.py
+Diagnostic-Code: smtp; 550 No Such User Here
+
+--4B60D5079C.1727120154/mta0.migadu.com
+Content-Description: Undelivered Message Headers
+Content-Type: text/rfc822-headers
+Content-Transfer-Encoding: 8bit
+
+Return-Path: <wilson@villalba.is>
+Message-ID: <82303afd-ab71-4135-8a1f-48d1af25d597@villalba.is>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=villalba.is; s=key1;
+	t=1727120110;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	to:to:cc:mime-version:mime-version:content-type:content-type:autocrypt:autocrypt;
+	bh=SIrnv09b9/h1s95I/4rrL3rWmklkMQhVEDCERxPyB6k=;
+	b=MFbzvYs82OA+DaTxnUMWBqDISYQxQFYpONczwPRaoegBDGmKjEBn7DCl/WmYodkJS35NIf
+	b3AiA0XA0Hd+3Y6DiK0gxqjPZrlNvmJ9Ku+KPnjmxFjQLaR3sXRaKU786gI8pJZtQgpKOp
+	Z0i5pDF6mNngtxY7Ba39p7ZVvY7edmn2Af2//X88wlRHfJn0dLouSiv3Ne7M+XyAl33eMZ
+	bEdUP9G7I9ZZwZoAGJnDePy9kEITG7oBE6uBUU4gFebvIp6bYrKI75PEPvL0gW2Mga1Eo3
+	Dv64aWFu4+La65TVvgMWLk225vta9u532zWzcWjRdfobUUYGjJOHyhneXJvtow==
+Date: Mon, 23 Sep 2024 15:34:56 -0400
+MIME-Version: 1.0
+Content-Language: en-US, es-ES
+To: "gobersanpedro018@gmail.com" <gobersanpedro018@gmail.com>,
+ "presupuesto@sanpedro.gov.py" <presupuesto@sanpedro.gov.py>,
+ "administracionyfinanzas@sanpedro.gov.py"
+ <administracionyfinanzas@sanpedro.gov.py>,
+ "finanzas@sanpedro.gov.py" <finanzas@sanpedro.gov.py>
+X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
+From: Wilson Villalba <wilson@villalba.is>
+Subject: =?UTF-8?Q?Remisi=C3=B3n_de_Oficio_Electr=C3=B3nico?=
+Autocrypt: addr=wilson@villalba.is; keydata=
+ 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
+ ZDuS5FX3dJMYHmHsK1CCtC4yWSBL
+Content-Type: multipart/signed; micalg=pgp-sha256;
+ protocol="application/pgp-signature";
+ boundary="------------iPfAIj0JCaE7kPhTAbKgSWF1"
+X-Migadu-Flow: FLOW_OUT
+
+--4B60D5079C.1727120154/mta0.migadu.com--
